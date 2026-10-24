@@ -1,0 +1,3 @@
+# TASK 1. Explain what happens between typing a URL and seeing a webpage?
+
+When we type a URL into a web browser and press Enter, the browser first checks the URL and uses DNS (Domain Name System) to find the server's IP address. It then establishes a connection with the server, usually using HTTPS for secure communication, and sends an HTTP request for the webpage. The server processes the request and sends back an HTTP response containing HTML, CSS, JavaScript, images, and other resources. The browser parses the HTML to create the page structure, applies CSS for styling, and executes JavaScript to add functionality. Finally, the browser renders the webpage on the screen so the user can interact with it.

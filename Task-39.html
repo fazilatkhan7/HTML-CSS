@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Responsive product grid with header and sidebar using CSS Grid.">
+  <title>Store – Header, Sidebar &amp; Product Grid</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+    }
+
+    body {
+      font-family: system-ui, sans-serif;
+      background: #f6f7fb;
+    }
+
+    .page {
+      display: grid;
+      grid-template-columns: 240px 1fr;
+      grid-template-areas: "header header" "sidebar main" "footer footer";
+      min-height: 100vh;
+    }
+
+    header {
+      grid-area: header;
+      background: #14213d;
+      color: #fff;
+      padding: 1rem 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    header input {
+      padding: .5rem .8rem;
+      border-radius: 6px;
+      border: 0;
+      width: min(260px, 40vw);
+    }
+
+    aside {
+      grid-area: sidebar;
+      background: #fff;
+      padding: 1.5rem;
+      border-right: 1px solid #ddd;
+    }
+
+    aside h2 {
+      font-size: 1rem;
+      margin-bottom: .5rem;
+    }
+
+    aside ul {
+      list-style: none;
+      padding: 0;
+      margin-bottom: 1.5rem;
+    }
+
+    aside li {
+      padding: .3rem 0;
+    }
+
+    main {
+      grid-area: main;
+      padding: 1.5rem;
+    }
+
+    .products {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 1.25rem;
+    }
+
+    .product {
+      background: #fff;
+      border-radius: 10px;
+      padding: 1rem;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, .07);
+    }
+
+    .product img {
+      width: 100%;
+      aspect-ratio: 1;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+
+    .product h3 {
+      font-size: 1rem;
+      margin: .6rem 0 .2rem;
+    }
+
+    .product p {
+      color: #0a8754;
+      font-weight: 700;
+    }
+
+    footer {
+      grid-area: footer;
+      background: #14213d;
+      color: #ccc;
+      text-align: center;
+      padding: 1rem;
+    }
+
+    @media (max-width: 720px) {
+      .page {
+        grid-template-columns: 1fr;
+        grid-template-areas: "header" "sidebar" "main" "footer";
+      }
+
+      aside {
+        border-right: 0;
+        border-bottom: 1px solid #ddd;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="page">
+    <header><strong>ShopGrid</strong><input type="search" placeholder="Search products" aria-label="Search products">
+    </header>
+    <aside>
+      <h2>Categories</h2>
+      <ul>
+        <li>Electronics</li>
+        <li>Clothing</li>
+        <li>Home</li>
+        <li>Sports</li>
+        <li>Accessories</li>
+      </ul>
+      <h2>Price</h2>
+      <ul>
+        <li>Under ₹1500</li>
+        <li>₹2500 – ₹15000</li>
+        <li>₹15000 - ₹50000</li>
+        <li>Above ₹50000</li>
+      </ul>
+    </aside>
+    <main>
+      <h1 style="margin-bottom:1rem">All Products</h1>
+      <div class="products">
+        <article class="product"><img src="https://i.pinimg.com/736x/e5/d5/c4/e5d5c40f9831b93de81f9288240b1486.jpg" width="400" height="250" alt="A pair of sneakers">
+          <h3>NIKE AIR JORDAN MID</h3>
+          <p>₹14,000</p>
+        </article>
+        <article class="product"><img src="https://i.pinimg.com/1200x/c8/69/40/c869408f52947f8201fc277263bbc0da.jpg" width="400" height="250" alt="Party wear dress">
+          <h3>MODEST WHITE DRESS</h3>
+          <p>₹2,900</p>
+        </article>
+        <article class="product"><img src="https://i.pinimg.com/736x/37/7d/2c/377d2cbb12931fff2901cb3dfc3fe07c.jpg" width="400" height="250" alt="COACH Handbag">
+          <h3>COACH TABBY HANDBAG</h3>
+          <p>₹55,000</p>
+        </article>
+        <article class="product"><img src="https://i.pinimg.com/736x/98/8e/db/988edbd1d439043b1bedaf79334e9820.jpg" width="400" height="250" alt="Digital camera with box">
+          <h3>CANON G7X CAMERA</h3>
+          <p>₹39,999</p>
+        </article>
+        <article class="product"><img src="https://i.pinimg.com/736x/68/eb/45/68eb45c19577ae5fb05a509b272b674c.jpg" width="400" height="250" alt="Laptop on bed">
+          <h3>MACKBOOK NEO</h3>
+          <p>₹89,000</p>
+        </article>
+        <article class="product"><img src="https://i.pinimg.com/736x/e6/b1/06/e6b106f8d7e8ee20dc3439c7954284c7.jpg" width="400" height="250" alt="Bedside desk lamp">
+          <h3>BEDSIDE AESTHETIC FURR LAMP</h3>
+          <p>₹1,200</p>
+        </article>
+        <article class="product"><img src="https://i.pinimg.com/736x/19/f5/6b/19f56b5562bc2b1536a9bec329b60791.jpg" width="400" height="250" alt="dyson hair dryer and stlyler">
+          <h3>DYSON AIRWRAP</h3>
+          <p>₹50,000</p>
+        </article>
+      </div>
+    </main>
+    <footer>&copy; 2026 ShopGrid</footer>
+  </div>
+</body>
+
+</html>

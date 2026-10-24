@@ -1,0 +1,510 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Fior &amp; Fiore – a gelateria in Delhi. Finished, fully responsive landing page."
+    />
+    <title>Fior &amp; Fiore – Gelateria, Delhi (Responsive)</title>
+    <style>
+      /* ===== TOKENS ===== */
+      :root {
+        --paper: #f7fbff;
+        --ink: #2c3a5e;
+        --accent: #3a56b0;
+        --sky: #d6ebff;
+        --pistachio: #d9f2da;
+        --peach: #ffe2d3;
+        --lilac: #e6dcff;
+        --radius: 18px;
+      }
+
+      /* ===== BASE ===== */
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        font-family: "Trebuchet MS", Verdana, sans-serif;
+        background: var(--paper);
+        color: var(--ink);
+        line-height: 1.65;
+      }
+      img {
+        max-width: 100%;
+        display: block;
+      }
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+      .wrap {
+        width: min(1150px, 92%);
+        margin-inline: auto;
+      }
+      .btn {
+        display: inline-block;
+        background: var(--peach);
+        color: var(--ink);
+        padding: 0.8rem 1.8rem;
+        border: 2px solid var(--ink);
+        border-radius: 999px;
+        font-weight: 700;
+        box-shadow: 4px 4px 0 var(--ink);
+      }
+      h1,
+      h2,
+      h3 {
+        font-family: Georgia, "Times New Roman", serif;
+      }
+      h2 {
+        font-size: 2.2rem;
+        text-align: center;
+        margin-bottom: 2rem;
+      }
+
+      /* ===== HEADER / NAV ===== */
+      .site-header {
+        padding-block: 1rem;
+      }
+      .site-header .wrap {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .logo {
+        font-family: Georgia, "Times New Roman", serif;
+        font-size: 1.6rem;
+        font-weight: 700;
+        color: var(--accent);
+      }
+      .site-nav ul {
+        display: flex;
+        gap: 2rem;
+        list-style: none;
+        font-weight: 700;
+      }
+      .site-nav a:hover {
+        color: var(--accent);
+      }
+
+      /* ===== HERO ===== */
+      .hero {
+        background: var(--sky);
+      }
+      .hero .wrap {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 3rem;
+        align-items: center;
+        padding-block: 4rem;
+      }
+      .hero h1 {
+        font-size: 3.4rem;
+        line-height: 1.1;
+        margin-bottom: 1rem;
+      }
+      .hero p {
+        margin-bottom: 1.5rem;
+        font-size: 1.1rem;
+      }
+      .hero img {
+        border: 3px solid var(--ink);
+        border-radius: 220px 220px var(--radius) var(--radius);
+        box-shadow: 14px 14px 0 var(--peach);
+        height: 420px;
+        width: 100%;
+        object-fit: cover;
+      }
+
+      /* ===== MENU ===== */
+      .menu {
+        padding-block: 4rem;
+        background: var(--pistachio);
+      }
+      .menu__grid {
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        gap: 2rem;
+      }
+      .dish {
+        grid-column: span 2;
+        border: 2px solid var(--ink);
+        border-radius: var(--radius);
+        box-shadow: 6px 6px 0 var(--ink);
+        overflow: hidden;
+        background: #fff;
+      }
+      .dish:nth-child(n + 4) {
+        grid-column: span 3;
+      }
+      .dish img {
+        height: 200px;
+        width: 100%;
+        object-fit: cover;
+      }
+      .dish__body {
+        padding: 1.25rem;
+      }
+      .dish__row {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+      }
+      .dish__price {
+        color: var(--accent);
+        font-weight: 700;
+      }
+
+      /* ===== SCIENCE ===== */
+      .facts {
+        padding-block: 4rem;
+      }
+      .facts__grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+      }
+      .fact {
+        padding: 1.75rem;
+        border: 2px solid var(--ink);
+        border-radius: var(--radius);
+      }
+      .fact:nth-child(1) {
+        background: var(--sky);
+      }
+      .fact:nth-child(2) {
+        background: var(--peach);
+      }
+      .fact:nth-child(3) {
+        background: var(--lilac);
+      }
+      .fact h3 {
+        margin-bottom: 0.5rem;
+      }
+
+      /* ===== ABOUT ===== */
+      .about {
+        padding-block: 4rem;
+      }
+      .about .wrap {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 3rem;
+        align-items: center;
+      }
+      .about img {
+        border: 3px solid var(--ink);
+        border-radius: var(--radius);
+        box-shadow: -14px 14px 0 var(--lilac);
+      }
+      .about h2 {
+        text-align: left;
+      }
+
+      /* ===== CONTACT / FOOTER ===== */
+      .contact {
+        background: var(--lilac);
+        padding-block: 3rem;
+        text-align: center;
+      }
+      .contact .btn {
+        margin-top: 1rem;
+      }
+      .site-footer {
+        padding-block: 1.5rem;
+      }
+      .site-footer .wrap {
+        display: flex;
+        justify-content: space-between;
+        font-size: 0.9rem;
+      }
+
+      /* ===== MOBILE NAV (hamburger, no JS) ===== */
+      .nav-toggle,
+      .burger {
+        display: none;
+      }
+      .burger {
+        font-size: 1.8rem;
+        color: var(--accent);
+        cursor: pointer;
+        line-height: 1;
+      }
+
+      /* ===== RESPONSIVE: TABLET (<= 900px) ===== */
+      @media (max-width: 900px) {
+        .hero .wrap,
+        .about .wrap {
+          grid-template-columns: 1fr;
+          gap: 2rem;
+        }
+        .hero {
+          text-align: center;
+        }
+        .hero h1 {
+          font-size: 2.6rem;
+        }
+        .hero img {
+          height: 300px;
+          box-shadow: 8px 8px 0 var(--peach);
+        }
+        .menu__grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+        .dish,
+        .dish:nth-child(n + 4) {
+          grid-column: span 1;
+        }
+        .dish:last-child {
+          grid-column: 1 / -1;
+        }
+        .facts__grid {
+          grid-template-columns: 1fr;
+        }
+        .about {
+          text-align: center;
+        }
+        .about h2 {
+          text-align: center;
+        }
+        .about img {
+          box-shadow: -8px 8px 0 var(--lilac);
+        }
+      }
+
+      /* ===== RESPONSIVE: PHONE (<= 600px) ===== */
+      @media (max-width: 600px) {
+        .site-header .wrap {
+          flex-wrap: wrap;
+        }
+        .burger {
+          display: block;
+        }
+        .site-nav {
+          width: 100%;
+          display: none;
+        }
+        .nav-toggle:checked ~ .site-nav {
+          display: block;
+        }
+        .site-nav ul {
+          flex-direction: column;
+          gap: 0;
+          text-align: center;
+          padding-top: 0.75rem;
+        }
+        .site-nav a {
+          display: block;
+          padding: 0.9rem;
+          border-top: 1px solid rgba(44, 58, 94, 0.15);
+        }
+        .hero .wrap {
+          padding-block: 2rem;
+        }
+        .hero h1 {
+          font-size: 2.1rem;
+        }
+        .hero img {
+          height: 220px;
+          border-radius: 140px 140px var(--radius) var(--radius);
+        }
+        h2 {
+          font-size: 1.6rem;
+        }
+        .menu__grid {
+          grid-template-columns: 1fr;
+        }
+        .dish:last-child {
+          grid-column: auto;
+        }
+        .site-footer .wrap {
+          flex-direction: column;
+          text-align: center;
+          gap: 0.25rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="wrap">
+        <a class="logo" href="#">🍨 Fior &amp; Fiore</a>
+        <input
+          type="checkbox"
+          id="nav-toggle"
+          class="nav-toggle"
+          aria-label="Toggle navigation"
+        />
+        <label for="nav-toggle" class="burger" aria-hidden="true">☰</label>
+        <nav class="site-nav" aria-label="Main">
+          <ul>
+            <li><a href="#menu">Flavours</a></li>
+            <li><a href="#science">Science</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="wrap">
+          <div>
+            <h1>Churned slow. Savoured slower.</h1>
+            <p>
+              Fior &amp; Fiore is a Delhi gelateria: small-batch gelato made
+              with less air, more fruit and a lot more patience.
+            </p>
+            <a class="btn" href="#menu">Browse the collection</a>
+          </div>
+          <img
+            src="https://i.pinimg.com/736x/29/a0/03/29a00357302e453b0269bfdbe17fe3dc.jpg"
+            alt="Colourful scoops of gelato"
+          />
+        </div>
+      </section>
+
+      <section class="menu" id="menu">
+        <div class="wrap">
+          <h2>The Flavour Collection</h2>
+          <div class="menu__grid">
+            <article class="dish">
+              <img
+                src="https://i.pinimg.com/736x/0e/d0/08/0ed008044f9d08e87855978269d47491.jpg"
+                alt="Scoop of pistachio gelato"
+              />
+              <div class="dish__body">
+                <div class="dish__row">
+                  <h3>Pistachio</h3>
+                  <span class="dish__price">₹550</span>
+                </div>
+                <p>Tasting note: roasted nuts, a pinch of salt, a long green finish.</p>
+              </div>
+            </article>
+            <article class="dish">
+              <img
+                src="https://i.pinimg.com/736x/a1/11/58/a11158b4491e7e58b764dd74b65ed236.jpg"
+                alt="Scoop of fior di latte gelato"
+              />
+              <div class="dish__body">
+                <div class="dish__row">
+                  <h3>Fior di Latte</h3>
+                  <span class="dish__price">₹450</span>
+                </div>
+                <p>Tasting note: pure sweet milk, the flavour every gelateria is judged by.</p>
+              </div>
+            </article>
+            <article class="dish">
+              <img
+                src="https://i.pinimg.com/736x/99/92/60/99926098afe584efd19c1480382c674c.jpg"
+                alt="Scoop of stracciatella gelato"
+              />
+              <div class="dish__body">
+                <div class="dish__row">
+                  <h3>Stracciatella</h3>
+                  <span class="dish__price">₹500</span>
+                </div>
+                <p>Tasting note: fior di latte threaded with fine shards of dark chocolate.</p>
+              </div>
+            </article>
+            <article class="dish">
+              <img
+                src="https://i.pinimg.com/736x/56/9c/03/569c0335908f0fa3fe201f10c965a436.jpg"
+                alt="Scoop of mango sorbetto"
+              />
+              <div class="dish__body">
+                <div class="dish__row">
+                  <h3>Mango Sorbetto</h3>
+                  <span class="dish__price">₹450</span>
+                </div>
+                <p>Dairy-free. Ripe mango pulp with a squeeze of lime, bright and clean.</p>
+              </div>
+            </article>
+            <article class="dish">
+              <img
+                src="https://i.pinimg.com/1200x/23/d2/46/23d2468953ddb46cadc80b991b1ad247.jpg"
+                alt="Scoop of nocciola gelato"
+              />
+              <div class="dish__body">
+                <div class="dish__row">
+                  <h3>Nocciola</h3>
+                  <span class="dish__price">₹550</span>
+                </div>
+                <p>Tasting note: toasted hazelnuts ground into a silky, deep-roasted scoop.</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="facts" id="science">
+        <div class="wrap">
+          <h2>Why Gelato Is Not Ice Cream</h2>
+          <div class="facts__grid">
+            <article class="fact">
+              <h3>Less air</h3>
+              <p>
+                Gelato is churned slowly, so it usually holds far less air than
+                ice cream. The result is denser and more intense.
+              </p>
+            </article>
+            <article class="fact">
+              <h3>Less fat</h3>
+              <p>
+                It leans on milk more than cream, which lets fruit and nut
+                flavours come through without being coated.
+              </p>
+            </article>
+            <article class="fact">
+              <h3>Served warmer</h3>
+              <p>
+                It is kept slightly less cold than ice cream, so it melts on
+                the tongue and carries more flavour.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="about" id="about">
+        <div class="wrap">
+          <img
+            src="https://i.pinimg.com/736x/0c/33/c4/0c33c4111f976d4efcdcb8a5381c58e4.jpg"
+            alt="Bright and calm gelato shop setting"
+          />
+          <div>
+            <h2>Our Story</h2>
+            <p>
+              Fior &amp; Fiore borrows from fior di latte, Italian for flower
+              of milk, and fiore, the word for flower. It began in 2021 as a
+              weekend experiment, and every flavour is still made in small
+              batches from a recipe we refine each season.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="contact" id="contact">
+        <div class="wrap">
+          <h2>Visit the Gelateria</h2>
+          <p>
+            Shop 7, South Extension Part I, New Delhi 110049. Open daily from
+            12 PM to 11 PM.
+          </p>
+          <a class="btn" href="tel:+919000000000">Reserve a tasting</a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="wrap">
+        <span>&copy; 2026 Fior &amp; Fiore</span><span>Instagram and Facebook</span>
+      </div>
+    </footer>
+  </body>
+</html>

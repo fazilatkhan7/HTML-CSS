@@ -1,0 +1,219 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Design Token Sheet</title>
+
+    <style>
+        /* Design Tokens */
+        :root {
+            --primary: #0f766e;
+            --accent: #f59e0b;
+            --bg: #f0fdfa;
+            --surface: #ffffff;
+            --text: #1f2937;
+            --muted: #64748b;
+            --border: #ccfbf1;
+
+            --space: 16px;
+            --radius: 12px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            padding: 30px 20px;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: auto;
+        }
+
+        header {
+            margin-bottom: 25px;
+        }
+
+        h1 {
+            font-size: 32px;
+            margin-bottom: 8px;
+        }
+
+        .subtitle, .description {
+            color: var(--muted);
+        }
+
+        .card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 24px;
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            font-size: 22px;
+            margin-bottom: 8px;
+        }
+
+        .description {
+            margin-bottom: 18px;
+            font-size: 14px;
+        }
+
+        /* Colour Palette */
+        .swatches {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 12px;
+        }
+
+        .swatch {
+            padding: 20px 12px;
+            border-radius: 8px;
+            color: white;
+            font-size: 14px;
+        }
+
+        .primary { background: var(--primary); }
+        .accent {
+            background: var(--accent);
+            color: #422006;
+        }
+        .muted { background: var(--muted); }
+        .dark { background: #115e59; }
+
+        /* Typography */
+        .type-row {
+            padding: 12px 0;
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            justify-content: space-between;
+            gap: 12px;
+        }
+
+        .type-row:last-child {
+            border-bottom: none;
+        }
+
+        .type-label {
+            color: var(--muted);
+            font-size: 13px;
+        }
+
+        .large { font-size: 24px; }
+        .medium { font-size: 20px; }
+        .small { font-size: 14px; }
+
+        /* Button */
+        .btn {
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 12px 22px;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background: #115e59;
+        }
+
+        footer {
+            text-align: center;
+            color: var(--muted);
+            font-size: 14px;
+            padding: 15px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 600px) {
+            h1 { font-size: 26px; }
+
+            .swatches {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .card {
+                padding: 18px;
+            }
+
+            .type-row {
+                flex-wrap: wrap;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <main class="container">
+
+        <header>
+            <h1>Design Token Sheet</h1>
+            <p class="subtitle">
+                A simple design system using HTML and CSS variables.
+            </p>
+        </header>
+
+        <section class="card">
+            <h2>01. Colour Palette</h2>
+            <p class="description">Reusable colours for the interface.</p>
+
+            <div class="swatches">
+                <div class="swatch primary">Primary</div>
+                <div class="swatch dark">Primary Dark</div>
+                <div class="swatch accent">Accent</div>
+                <div class="swatch muted">Muted</div>
+            </div>
+        </section>
+
+        <section class="card">
+            <h2>02. Typography</h2>
+            <p class="description">Different text sizes for visual hierarchy.</p>
+
+            <div class="type-row">
+                <span class="large">Large Heading</span>
+                <span class="type-label">24px</span>
+            </div>
+
+            <div class="type-row">
+                <span class="medium">Medium Text</span>
+                <span class="type-label">20px</span>
+            </div>
+
+            <div class="type-row">
+                <span>Body Text</span>
+                <span class="type-label">16px</span>
+            </div>
+
+            <div class="type-row">
+                <span class="small">Small Text</span>
+                <span class="type-label">14px</span>
+            </div>
+        </section>
+
+        <section class="card">
+            <h2>03. Component Preview</h2>
+            <p class="description">A button styled using CSS variables.</p>
+
+            <button class="btn" type="button">Primary Button</button>
+        </section>
+
+        <footer>
+            Built with HTML & CSS
+        </footer>
+
+    </main>
+</body>
+</html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Responsive product grid that reflows with auto-fit and minmax.">
+  <title>Auto-Reflowing Product Grid</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: system-ui, sans-serif;
+      background: #f5f6fa;
+      padding: 2rem 1rem;
+    }
+
+    h1 {
+      text-align: center;
+    }
+
+    /* No media queries needed – the grid reflows by itself */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.25rem;
+      max-width: 1200px;
+      margin: 1.5rem auto;
+    }
+
+    .card {
+      background: #fff;
+      border-radius: 12px;
+      padding: 1rem;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, .08);
+      text-align: center;
+    }
+
+    .card img {
+      width: 100%;
+      aspect-ratio: 4/3;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+
+    .card h2 {
+      font-size: 1.05rem;
+      margin: .75rem 0 .25rem;
+    }
+
+    .price {
+      color: #0a8754;
+      font-weight: 700;
+    }
+
+    .note {
+      text-align: center;
+      color: #666;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Our Products</h1>
+  <div class="grid">
+    <div class="card"><img src="https://i.pinimg.com/736x/09/c1/f6/09c1f6eb87f6a86561735f760df9a5e6.jpg" width="900" height="350" alt="YSL perfume">
+      <h2>YVES SAINT LAURENT Libre Intense Eau de parfum for women(90 ml)</h2>
+      <p class="price">₹14000</p>
+    </div>
+    <div class="card"><img src="https://i.pinimg.com/736x/b5/ac/7d/b5ac7d3db005803df07042d88873658f.jpg" width="900" height="350" alt="PARFUM'S de MARLY perfume">
+      <h2>PARFUM'S de MARLY Delina Exclusif parfum for Women(90 ml)</h2>
+      <p class="price">₹37000</p>
+    </div>
+    <div class="card"><img src="https://i.pinimg.com/736x/b2/25/82/b225828c0d1a929c7969b7574e74ead6.jpg" width="900" height="350" alt="Louis Vuitton perfume">
+      <h2>LOUIS VUITTON IMAGINATION Eau de parfum for men (100 ml)</h2>
+      <p class="price">₹35000</p>
+    </div>
+    <div class="card"><img src="https://i.pinimg.com/736x/ed/86/5c/ed865cacb759c6d1a5df26b5faa3b6f6.jpg" width="900" height="350" alt="CREED AVENTUS perfume">
+      <h2>CREED AVENTUS Eau de parfum for men (100 ml)</h2>
+      <p class="price">₹40000</p>
+    </div>
+    <div class="card"><img src="https://i.pinimg.com/736x/a8/fa/06/a8fa06c7db7946f587bd191202c85725.jpg" width="900" height="350" alt="TOM FORD perfume">
+      <h2>TOM FORD LOST CHERRY parfum for women (100 ml)</h2>
+      <p class="price">₹38000</p>
+    </div>
+    <div class="card"><img src="https://i.pinimg.com/736x/78/25/7f/78257f9988f10e97d1e7cf66761fa885.jpg" width="900" height="350" alt="Dior perfume">
+      <h2>MISS DIOR Eau de parfum for women (100 ml)</h2>
+      <p class="price">₹17800</p>
+    </div>
+    <div class="card"><img src="https://i.pinimg.com/736x/d5/a1/b4/d5a1b4186f71e956ebce14c9ae398f01.jpg" width="900" height="350" alt="Chanel perfume">
+      <h2>COCO MADEMOISELLE CHANEL intense parfum for women (100 ml)</h2>
+      <p class="price">₹17300</p>
+    </div>
+      <div class="card"><img src="https://i.pinimg.com/1200x/77/a6/85/77a685efa3592590c5d4da0c410568af.jpg" width="900" height="350" alt="CAROLINA HERRERA perfume">
+      <h2>GOOD GIRL BLUSH ELIXIR BY CAROLINA HERRERA for women (80 ml)</h2>
+      <p class="price">₹12850</p>
+    </div>
+    <div class="card"><img src="https://i.pinimg.com/1200x/cd/0f/aa/cd0faa0a9cf8ba72971c6d18c2074b30.jpg" width="900" height="350" alt="VERSACE perfume">
+      <h2>VERSACE CRSTAL NOIR Pour Femme parfum for women (90 ml)</h2>
+      <p class="price">₹16000</p>
+    </div>
+</div>
+</body>
+
+</html>

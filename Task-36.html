@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Photo gallery built with CSS Grid.">
+  <title>CSS Grid Photo Gallery</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+    }
+
+    body {
+      font-family: system-ui, sans-serif;
+      background: #111;
+      color: #fff;
+      padding: 2rem;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 1.5rem;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-auto-rows: 180px;
+      gap: 10px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .gallery figure {
+      overflow: hidden;
+      border-radius: 10px;
+      position: relative;
+    }
+
+    .gallery img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform .4s;
+    }
+
+    .gallery figure:hover img {
+      transform: scale(1.08);
+    }
+
+    .gallery figcaption {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: .5rem;
+      background: rgba(0, 0, 0, .6);
+      font-size: .85rem;
+    }
+
+    .wide {
+      grid-column: span 2;
+    }
+
+    .tall {
+      grid-row: span 2;
+    }
+
+    .big {
+      grid-column: span 2;
+      grid-row: span 2;
+    }
+
+    @media (max-width: 800px) {
+      .gallery {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 480px) {
+      .gallery {
+        grid-template-columns: 1fr;
+      }
+
+      .wide,
+      .big {
+        grid-column: auto;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <h1>My Gallery</h1>
+  <div class="gallery">
+    <figure class="big"><img src="https://picsum.dev/i/814/800/600" alt="A view of Earth from space">
+      <figcaption>Earth from space</figcaption>
+    </figure>
+    <figure><img src="https://picsum.dev/i/337/600/600" alt=" spiral galaxy in vivid purple and blue colors, golden hour lighting, warm tones, atmospheric">
+      <figcaption>Purple Spiral Galaxy</figcaption>
+    </figure>
+    <figure class="tall"><img src="https://picsum.dev/i/38/600/600" alt="an astronaut floating in space with a galaxy behind, ultra realistic, crisp details, studio quality">
+      <figcaption>Astronaut in Space</figcaption>
+    </figure>
+    <figure><img src="https://picsum.dev/i/129/600/600" alt="a black hole with a glowing accretion disk, golden hour lighting, warm tones, atmospheric">
+      <figcaption>Black Hole</figcaption>
+    </figure>
+    <figure class="wide"><img src="https://picsum.dev/i/90/1200/630" alt="a moon landscape with earth rising on the horizon, minimalist composition, clean background, elegant">
+      <figcaption>Moon Landscape</figcaption>
+    </figure>
+    <figure><img src="https://picsum.dev/i/142/1200/630" alt="a colorful nebula with bright stars in deep space, golden hour lighting, warm tones, atmospheric">
+      <figcaption>Colorful Nebula</figcaption>
+    </figure>
+    <figure><img src="https://picsum.dev/i/77/800/600" alt="a spiral galaxy in vivid purple and blue colors, ultra realistic, crisp details, studio quality">
+      <figcaption>Evolutionary Spiral Galaxy</figcaption>
+    </figure>
+</body>
+
+</html>

@@ -1,0 +1,412 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Apple-inspired Flexbox landing page with responsive navbar, hero and features.">
+    <title>Apple - Flexbox Landing Page</title>
+
+    <style>
+        :root {
+            --blue: #0071e3;
+            --light: #f5f5f7;
+            --dark: #1d1d1f;
+            --grey: #515154;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            color: var(--dark);
+            line-height: 1.6;
+            background: #fff;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Navbar */
+        nav {
+            background: #fff;
+            border-bottom: 1px solid #e5e5e5;
+        }
+
+        nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-block: 16px;
+        }
+
+        .logo {
+            font-weight: 700;
+            font-size: 1.5rem;
+        }
+
+        .logo a {
+            color: var(--dark);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+            list-style: none;
+        }
+
+        nav ul a {
+            font-size: 14px;
+        }
+
+        nav ul a:hover {
+            color: var(--blue);
+        }
+
+        .nav-btn {
+            background: var(--blue);
+            color: #fff;
+            padding: 8px 17px;
+            border-radius: 25px;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: var(--light);
+            text-align: center;
+        }
+
+        .hero .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-block: 45px 0;
+        }
+
+        .hero__text {
+            max-width: 800px;
+            margin-bottom: 30px;
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            line-height: 1.1;
+            margin-bottom: 12px;
+        }
+
+        .hero h2 {
+            font-size: clamp(1.4rem, 3vw, 2rem);
+            font-weight: 400;
+            margin-bottom: 12px;
+        }
+
+        .hero p {
+            color: var(--grey);
+            margin-bottom: 22px;
+        }
+
+        .btns {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 14px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 22px;
+            border-radius: 25px;
+            border: 1px solid var(--blue);
+            color: var(--blue);
+        }
+
+        .btn-primary {
+            background: var(--blue);
+            color: #fff;
+        }
+
+        .btn:hover {
+            opacity: 0.85;
+        }
+
+        .hero__img {
+            width: 100%;
+            max-width: 1000px;
+        }
+
+        .hero__img img {
+            display: block;
+            width: 100%;
+            height: auto;
+            border-radius: 12px 12px 0 0;
+        }
+
+        /* Features */
+        .features {
+            padding-block: 60px;
+            text-align: center;
+        }
+
+        .features h2 {
+            font-size: 2rem;
+            margin-bottom: 30px;
+        }
+
+        .features__list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 24px;
+        }
+
+        .feature {
+            flex: 1 1 250px;
+            max-width: 350px;
+            background: var(--light);
+            padding: 25px;
+            border-radius: 14px;
+        }
+
+        .feature span {
+            font-size: 2rem;
+        }
+
+        .feature h3 {
+            margin: 10px 0;
+        }
+
+        .feature p {
+            color: var(--grey);
+            font-size: 14px;
+        }
+
+        /* Testimonials */
+        .testimonial {
+            background: var(--dark);
+            color: #fff;
+            padding-block: 45px;
+        }
+
+        .testimonial .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+        }
+
+        .quote {
+            flex: 1 1 280px;
+            max-width: 450px;
+            text-align: center;
+        }
+
+        .quote cite {
+            display: block;
+            margin-top: 10px;
+            color: #a8cfff;
+            font-style: normal;
+        }
+
+        /* Footer */
+        footer .container {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 12px;
+            padding-block: 22px;
+            color: #666;
+            font-size: 13px;
+        }
+
+        footer a:hover {
+            color: var(--blue);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            nav .container {
+                flex-direction: column;
+                gap: 14px;
+            }
+
+            nav ul {
+                justify-content: center;
+                flex-wrap: wrap;
+                gap: 16px;
+            }
+
+            .hero .container {
+                padding-top: 35px;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero__img img {
+                border-radius: 10px 10px 0 0;
+            }
+
+            .features {
+                padding-block: 40px;
+            }
+
+            footer .container {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav>
+        <div class="container">
+            <h2 class="logo">
+                <a href="https://www.apple.com/in/">Apple</a>
+            </h2>
+
+            <ul>
+                <li><a href="https://www.apple.com/in/store/">Store</a></li>
+                <li><a href="https://www.apple.com/in/mac/">Mac</a></li>
+                <li><a href="https://www.apple.com/in/ipad/">iPad</a></li>
+                <li><a href="https://www.apple.com/in/iphone/">iPhone</a></li>
+                <li>
+                    <a class="nav-btn"
+                       href="https://www.apple.com/in/shop/buy-iphone">
+                        Buy
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="container">
+
+            <div class="hero__text">
+                <h1>iPhone</h1>
+                <h2>Designed to delight.</h2>
+
+                <p>
+                    Discover a beautiful design and
+                    an amazing everyday experience.
+                </p>
+
+                <div class="btns">
+                    <a class="btn btn-primary"
+                       href="https://www.apple.com/in/iphone/">
+                        Learn more
+                    </a>
+
+                    <a class="btn"
+                       href="https://www.apple.com/in/shop/buy-iphone">
+                        Buy &rarr;
+                    </a>
+                </div>
+            </div>
+
+            <div class="hero__img">
+                <a href="https://www.apple.com/in/iphone/">
+                    <img
+                        src="https://www.apple.com/v/iphone/home/cj/images/meta/iphone__bh930eyjnj0i_og.png?202606161406"
+                        alt="Apple iPhone product image">
+                </a>
+            </div>
+
+        </div>
+    </header>
+
+    <!-- Features -->
+    <section class="features" id="features">
+        <div class="container">
+            <h2>Explore Apple</h2>
+
+            <div class="features__list">
+
+                <div class="feature">
+                    <span>💻</span>
+                    <h3>Mac</h3>
+                    <p>Powerful tools for work, study and creativity.</p>
+                    <a class="btn"
+                       href="https://www.apple.com/in/mac/">
+                        Explore Mac
+                    </a>
+                </div>
+
+                <div class="feature">
+                    <span>📱</span>
+                    <h3>iPhone</h3>
+                    <p>Discover iPhone models and their features.</p>
+                    <a class="btn"
+                       href="https://www.apple.com/in/iphone/">
+                        Explore iPhone
+                    </a>
+                </div>
+
+                <div class="feature">
+                    <span>🎧</span>
+                    <h3>AirPods</h3>
+                    <p>Enjoy wireless audio and everyday convenience.</p>
+                    <a class="btn"
+                       href="https://www.apple.com/in/airpods/">
+                        Explore AirPods
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials-style section -->
+    <section class="testimonial">
+        <div class="container">
+            <blockquote class="quote">
+                "Technology that fits naturally into everyday life."
+                <cite>Discover Apple</cite>
+            </blockquote>
+
+            <blockquote class="quote">
+                "Explore products designed for work and creativity."
+                <cite>Explore the lineup</cite>
+            </blockquote>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <span>&copy; 2026 Apple-inspired Landing Page</span>
+
+            <span>
+                <a href="https://www.apple.com/in/legal/privacy/">
+                    Privacy
+                </a>
+                &nbsp; | &nbsp;
+                <a href="https://www.apple.com/in/contact/">
+                    Contact Apple
+                </a>
+            </span>
+        </div>
+    </footer>
+
+</body>
+</html>
