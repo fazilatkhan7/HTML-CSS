@@ -1,6 +1,6 @@
 # TASK 3. Complete the terminal-navigation practice sheet.
 
-Commands for macOS / Linux / Git Bash (Windows PowerShell equivalents in the last column).
+Commands for macOS / Linux / Git Bash.
 
 | # | Task | Command | PowerShell |
 |---|------|---------|------------|
